@@ -3,18 +3,19 @@ import java.util.regex.Pattern;
 
 public class RegexMatches {
 
-   private static final String REGEX = "[\bSet\\s\balarm\\s\bat\\s]";
-   private static final String INPUT = "Set Alarm at 10.30 am";
+   private static final String REGEX = "[\bS.set\\s+\bA.alarm\\s+\bat\\s]";
+   private static final String INPUT = "Set alarm at 10.30 am";
    private static Pattern pattern;
    private static Matcher matcher;
 
    public static void main( String args[] ) {
       pattern = Pattern.compile(REGEX);
       matcher = pattern.matcher(INPUT);
-      
-      //System.out.println("Current REGEX is: "+REGEX);
+      Boolean result;
+      System.out.println("Current REGEX is: "+REGEX);
       System.out.println("Current INPUT is: "+INPUT);
-      System.out.println("lookingAt(): "+matcher.lookingAt());
+      result=matcher.lookingAt();
+      System.out.println(result);
       //System.out.println("matches(): "+matcher.matches());
    }
 }
